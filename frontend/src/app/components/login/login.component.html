@@ -1,0 +1,27 @@
+<!-- src/app/components/login/login.component.html -->
+<div class="login-wrap">
+  <div class="login-card">
+    <img src="assets/APU-SOL.png" alt="Logo APU" class="logo">
+    <h2>Iniciar Sesión</h2>
+
+    <div class="input-group">
+      <label>Usuario</label>
+      <input type="text" [(ngModel)]="username" placeholder="Ingrese su usuario"
+             (keyup.enter)="login()">
+    </div>
+
+    <div class="input-group">
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]="password" placeholder="Ingrese su contraseña"
+             (keyup.enter)="login()">
+    </div>
+
+    <button class="btn-login" (click)="login()" [disabled]="loading">
+      {{ loading ? 'INGRESANDO...' : 'INGRESAR' }}
+    </button>
+
+    <div class="error-msg" *ngIf="errorMsg">
+      <i class="fas fa-exclamation-circle"></i> {{ errorMsg }}
+    </div>
+  </div>
+</div>

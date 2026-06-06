@@ -1,0 +1,9 @@
+# Configuración corregida para el servidor de la UAndina
+Options -MultiViews
+RewriteEngine On
+RewriteBase /ads-a/grupo4/
+
+# Si el archivo o carpeta física no existe, manda todo al index.php de Angular
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

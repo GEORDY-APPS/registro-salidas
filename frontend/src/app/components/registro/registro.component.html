@@ -1,0 +1,68 @@
+<!-- src/app/components/registro/registro.component.html -->
+
+<!-- Botón menú admin -->
+<button *ngIf="auth.isAdmin()" class="menu-toggle" (click)="toggleSidebar()">
+  <i class="fas fa-bars"></i> MENÚ
+</button>
+
+<!-- Botón cerrar sesión (solo usuarios estándar) -->
+<button *ngIf="!auth.isAdmin()" class="btn-logout-user" (click)="logout()">
+  <i class="fas fa-sign-out-alt"></i> SALIR
+</button>
+
+<!-- Sidebar admin (componente separado) -->
+<app-admin *ngIf="auth.isAdmin()" [open]="sidebarOpen" (cerrar)="cerrarSidebar()"></app-admin>
+
+<!-- Overlay -->
+<div class="overlay" [class.visible]="sidebarOpen" (click)="cerrarSidebar()"></div>
+
+<!-- Formulario principal -->
+<div class="container">
+  <div class="card">
+    <header class="header-centrado">
+      <img src="assets/APU-SOL.png" alt="Logo" class="logo-img">
+      <h1 class="titulo-principal">REGISTRO DE SALIDAS DEL PERSONAL</h1>
+      <h2 class="subtitulo-empresa">{{ empresaSeleccionada }}</h2>
+    </header>
+
+    <!-- Selector empresa -->
+    <div class="from-grid">
+      <label>Seleccionar Empresa:</label>
+      <select [(ngModel)]="empresaSeleccionada" class="custom-sel">
+        <option value="" disabled>SELECCIONAR...</option>
+        <option *ngFor="let emp of empresas" [value]="emp">{{ emp }}</option>
+      </select>
+    </div>
+
+    <!-- Campos -->
+    <div class="form-body">
+      <div class="input-group">
+        <label>DNI</label>
+        <input type="text" [(ngModel)]="dni" (input)="onDniInput()"
+               placeholder="Ingrese DNI" maxlength="8" inputmode="numeric">
+      </div>
+
+      <div class="input-group">
+        <label>Nombre Completo</label>
+        <input type="text" [(ngModel)]="nombre"
+               [readOnly]="nombreReadOnly"
+               [class.buscando]="buscandoDNI"
+               [class.no-encontrado]="!buscandoDNI && !nombreReadOnly && nombre === ''"
+               placeholder="{{ nombreReadOnly ? '' : 'No encontrado. Escriba manual' }}">
+      </div>
+
+      <!-- Firma -->
+      <div class="input-group">
+        <label>Firma</label>
+        <div class="canvas-container">
+          <canvas #firmaCanvas></canvas>
+        </div>
+        <button class="btn-clear" type="button" (click)="limpiarFirma()">Limpiar Firma</button>
+      </div>
+
+      <button class="btn-save" (click)="guardar()" [disabled]="guardando">
+        {{ guardando ? 'GUARDANDO...' : 'GUARDAR DATOS' }}
+      </button>
+    </div>
+  </div>
+</div>

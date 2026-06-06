@@ -1,0 +1,37 @@
+<!-- src/app/components/admin/admin.component.html -->
+<div class="sidebar" [class.open]="open">
+  <div class="sidebar-header">
+    <h3>PANEL DE CONTROL</h3>
+    <button class="btn-close" (click)="close()">&times;</button>
+  </div>
+
+  <div class="sidebar-content">
+    <div class="stat-box">
+      <label>Registros en la BD:</label>
+      <span class="count">{{ totalRegistros }}</span>
+    </div>
+
+    <div class="from-grid">
+      <label>Empresa para Descargar:</label>
+      <select [(ngModel)]="empresaDescarga" class="custom-sel">
+        <option *ngFor="let e of empresas" [value]="e">{{ e }}</option>
+      </select>
+    </div>
+
+    <button class="btn-side" (click)="descargarPDF()" [disabled]="cargando">
+      <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+    </button>
+
+    <button class="btn-side" (click)="descargarExcel()" [disabled]="cargando">
+      <i class="fas fa-file-excel"></i> DESCARGAR EXCEL
+    </button>
+
+    <button class="btn-side danger" (click)="borrarTodo()">
+      <i class="fas fa-trash"></i> BORRAR TODO ⚠️
+    </button>
+
+    <button class="btn-side btn-logout" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> CERRAR SESIÓN
+    </button>
+  </div>
+</div>

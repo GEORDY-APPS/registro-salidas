@@ -1,0 +1,40 @@
+/* login.component.css */
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #F1F5F9;
+  font-family: 'Poppins', sans-serif;
+}
+.login-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+.logo { width: 110px; margin-bottom: 1rem; }
+h2 { color: #1E293B; margin-bottom: 1.8rem; font-weight: 700; font-size: 1.5rem; }
+.input-group { margin-bottom: 1.2rem; text-align: left; }
+.input-group label { display: block; margin-bottom: 6px; color: #1F1F1F; font-size: .9rem; font-weight: 500; }
+.input-group input {
+  width: 100%; padding: 12px; border: 1.5px solid #AEB6C3;
+  border-radius: 10px; box-sizing: border-box; font-size: .95rem;
+  font-family: 'Poppins', sans-serif;
+}
+.input-group input:focus { outline: none; border-color: #1E293B; }
+.btn-login {
+  width: 100%; padding: 12px; background: #1E293B; color: #fff;
+  border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+  cursor: pointer; text-transform: uppercase; font-family: 'Poppins', sans-serif;
+  margin-top: .5rem; transition: background .3s;
+}
+.btn-login:hover:not(:disabled) { background: #000; }
+.btn-login:disabled { opacity: .6; cursor: not-allowed; }
+.error-msg {
+  color: #FF0000; background: #FCE8E6; padding: 8px;
+  border-radius: 6px; font-size: .8rem; margin-top: 15px;
+}
