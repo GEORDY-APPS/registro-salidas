@@ -1,14 +1,17 @@
 <?php
-// backend/reniec.php — POST { dni } → datos RENIEC
 require_once __DIR__ . '/cors.php';
 setCorsHeaders();
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') jsonError('Solo POST', 405);
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    jsonError('Solo POST', 405);
+}
 
 $body = json_decode(file_get_contents('php://input'), true);
 $dni  = preg_replace('/\D/', '', $body['dni'] ?? '');
 
-if (strlen($dni) !== 8) jsonError('DNI inválido');
+if (strlen($dni) !== 8) {
+    jsonError('DNI inválido');
+}
 
 $url = RENIEC_URL . '?numero=' . $dni;
 $ch  = curl_init($url);
@@ -27,6 +30,8 @@ $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $err      = curl_error($ch);
 curl_close($ch);
 
-if ($err) jsonError($err, 500);
+if ($err) {
+    jsonError($err, 500);
+}
 http_response_code($httpCode);
 echo $response;
