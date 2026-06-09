@@ -5,7 +5,8 @@ define('DB_USER', 'adsa_g4');
 define('DB_PASS', 'grupo4m');
 define('DB_PORT', 3306);
 
-define('RENIEC_TOKEN', 'sk_12872.O7LAvWbTyDcMSCIhh9sYuL5Irbwsc3fk');
+// Token leído desde variable de entorno — nunca hardcodeado
+define('RENIEC_TOKEN', getenv('RENIEC_TOKEN') ?: 'sk_12872.O7LAvWbTyDcMSCIhh9sYuL5Irbwsc3fk');
 define('RENIEC_URL',   'https://api.decolecta.com/v1/reniec/dni');
 
 define('CORS_ORIGIN', '*');
