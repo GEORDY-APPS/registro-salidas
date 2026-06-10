@@ -25,9 +25,9 @@ header('Content-Type: text/html; charset=utf-8');
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
           integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"
-          integrity="sha512-tQyBT5wBp5RF9EcFOiM3VCU0eGQ0apSNMFT/8Y5FGSkjKqBqqfzYYKRMjn5NCFj2r5EFGLS6bKBSdJqJtqGJQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"
+        integrity="sha512-hG6tLc9q8bFM5OQASDTJTJJg/wn8PP0PcayE3I2H1972/F7ktiSvWutAuQIkt4QUTIhiaFEnkrKea7XHUv1ugg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"
           integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -37,10 +37,10 @@ header('Content-Type: text/html; charset=utf-8');
 <body>
   <app-root></app-root>
   <script src="polyfills-FFHMD2TL.js" type="module"></script>
-  <script src="chunk-5DMO5WZN.js" type="module"></script>
-  <script src="chunk-5ILXT3SR.js" type="module"></script>
-  <script src="chunk-FF6X7YZH.js" type="module"></script>
-  <script src="chunk-T35OFPYV.js" type="module"></script>
-  <script src="main-X7XDSTVY.js" type="module"></script>
+  <script src="chunk-6HIA4YR7.js" type="module"></script>
+  <script src="chunk-44LO7N6R.js" type="module"></script>
+  <script src="chunk-R5FGXTDA.js" type="module"></script>
+  <script src="chunk-ZDBZE527.js" type="module"></script>
+  <script src="main-UQZSZNNZ.js" type="module"></script>
 </body>
 </html>
